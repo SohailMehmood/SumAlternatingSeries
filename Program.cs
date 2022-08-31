@@ -1,29 +1,32 @@
 ﻿using System;
 
-class Program
+namespace SumAlternatingSeries
 {
-    static void Main(string[] args)
+    class Program
     {
-        float sum = 0;
-
-       for(float i = 1; i <= 1e6; i++)
+        static void Main(string[] args)
         {
-            if (i % 2 == 1)
+            float sum = 0;
+
+            for (float i = 1; i <= 1e6; i++)
             {
-                sum += 1 / (2 * i - 1);
+                if (i % 2 == 1)
+                {
+                    sum += 1 / (2 * i - 1);
+                }
+                else
+                {
+                    sum -= 1 / (2 * i - 1);
+                }
+
+                float answer = sum * 4;
+                sum++;
+
+                Console.WriteLine(answer);
+
             }
-            else
-            {
-                sum -= 1 / (2 * i - 1);
-            }
-            
-            float answer = sum * 4;
-            sum++;
-            
-            Console.WriteLine(answer); 
-             
+
+
         }
-
-
     }
 }
