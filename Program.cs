@@ -2,10 +2,15 @@
 
 namespace SumAlternatingSeries
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            if (args == null)
+            {
+                throw new ArgumentNullException(nameof(args));
+            }
+
             float sum = 0;
 
             for (float i = 1; i <= 1e6; i++)
